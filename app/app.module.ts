@@ -8,13 +8,12 @@ import { appRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RefTableComponent }  from './ref/reftable.component';
-import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { DummyComponent } from './dummy/dummy.component';
-import { AdvancedSearchComponent } from './advancedsearch/advanced-search.component';
+
 
 import { RefService } from './ref/ref.service';
-import { PlaceholderService } from './placeholder/placeholder.service';
+
 
 /**
  * 
@@ -28,10 +27,8 @@ import { PlaceholderService } from './placeholder/placeholder.service';
     AppComponent,
     RefTableComponent,
     DashboardComponent,
-    PlaceholderComponent,
     AutocompleteComponent,
-    DummyComponent,
-    AdvancedSearchComponent
+    DummyComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +37,7 @@ import { PlaceholderService } from './placeholder/placeholder.service';
     appRouting
   ],
   providers: [
-    RefService,
-    PlaceholderService
+    RefService
   ],
   bootstrap: [AppComponent]
 })
