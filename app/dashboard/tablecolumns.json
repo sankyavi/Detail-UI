@@ -1,0 +1,42 @@
+[
+    {
+        "field": "name",
+        "title": "Name",
+        "show": true
+    },
+    {
+        "field": "description",
+        "title": "Description",
+        "show": true
+    },
+    {
+        "field": "createdOn",
+        "title": "Created On",
+        "show": true
+    },
+    {
+        "field": "createdBy",
+        "title": "Created By",
+        "show": true
+    },
+    {
+        "field": "expiryDate",
+        "title": "Expiry Date",
+        "show": true
+    },
+    {
+        "field": "lastModifiedDate",
+        "title": "Last Modified Date",
+        "show": true
+    },
+    {
+        "field": "lastModifiedBy",
+        "title": "Last Modified By",
+        "show": true
+    },
+    {
+        "field": "status",
+        "title": "Status",
+        "show": true
+    }
+]

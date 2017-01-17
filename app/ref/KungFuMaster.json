@@ -1,0 +1,34 @@
+{  
+   "name":"KungFu Master",
+   "schema":[  
+      {  
+         "name":"kfId",
+         "title":"KF Id",
+         "type":"number"
+      },
+      {  
+         "name":"coverage_Name",
+         "title":"Coverage Name",
+         "type":"string"
+      },
+       {  
+         "name":"coverage_Name2",
+         "title":"Coverage Name2",
+         "type":"number"
+      }
+   ],
+   "references":[  
+      {  
+         "kfId":1,
+         "coverage_Name":"Inpatient Treatment",
+         "coverage_Name2":"Inpatient Treatment"
+      },
+      {  
+         "kfId":2,
+         "coverage_Name":"Post Hospitalization",
+         "coverage_Name2":"Inpatient Treatment"
+      }
+   ],
+   "totalNumberOfRecords":2
+}
+

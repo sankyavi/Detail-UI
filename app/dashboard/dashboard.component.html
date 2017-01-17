@@ -1,0 +1,59 @@
+<h3>Masters</h3>
+<p>Dashboard > Admin > Masters</p>
+
+<autocomplete></autocomplete>
+<advanced-search></advanced-search>
+
+<!-- Switch -->
+<div class="row" *ngIf="showcolumncontrol">
+    <div class="switch" *ngFor="let col of cols.headers">
+        <span class="col s2 m2">{{  col.title  }}</span>
+        <label>
+      Off
+      <input type="checkbox" [(ngModel)]="col.show" *ngIf="col.editable">
+      <span class="lever"></span>
+      On
+    </label>
+    </div>
+</div>
+
+<!--<div class="row" *ngIf="showcolumncontrol">
+    <div class="switch" *ngFor="let col of cols.headers">
+        <span class="col s2 m2" *ngIf="col.editable">{{  col.title  }}</span>
+        <label *ngIf="col.editable">
+      Off
+      <input type="checkbox" [(ngModel)]="col.show" >
+      <span class="lever"></span>
+      On
+    </label>
+    </div>
+</div>-->
+
+<table class="striped centered">
+    <thead>
+        <tr>
+            <th *ngFor="let col of cols.headers"><span *ngIf="col.show">{{col.title}}</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of data.data">
+            <td *ngFor="let col of cols.headers; let i = index;" [style.background]="getStyle(data.status,i)">
+                <span *ngIf="col.show"  (click)="goto(data.name)">
+                    {{data[col.field]}}
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<hr>
+
+<div class="fixed-action-btn horizontal">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons">settings</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a (click)="showColumnsToggle()" class="btn-floating blue"><i class="material-icons">list</i></a></li>
+    </ul>
+</div>

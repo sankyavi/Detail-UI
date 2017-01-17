@@ -1,0 +1,74 @@
+{  
+   "name":"Coverage Master",
+   "schema":[  
+      {  
+         "name":"coverageId",
+         "title":"Coverage Id",
+         "type":"number"
+      },
+      {  
+         "name":"coverage_Name",
+         "title":"Coverage Name",
+         "type":"string"
+      },
+      {  
+         "name":"coverage_Lob",
+         "title":"Coverage Lob",
+         "type":"string"
+      }
+   ],
+   "references":[  
+      {  
+         "coverageId":11,
+         "coverage_Name":"Inpatient Treatment",
+         "coverage_Lob":"Health"
+      },
+      {  
+         "coverageId":12,
+         "coverage_Name":"Post Hospitalization",
+         "coverage_Lob":"Health"
+      },
+      {  
+         "coverageId":13,
+         "coverage_Name":"Post Hospitalization",
+         "coverage_Lob":"Health"
+      },
+      {  
+         "coverageId":14,
+         "coverage_Name":"ICU Hospitalization",
+         "coverage_Lob":"Wealth"
+      },
+        {  
+         "coverageId":15,
+         "coverage_Name":"Inpatient Treatment",
+         "coverage_Lob":"Health"
+      },
+      {  
+         "coverageId":26,
+         "coverage_Name":"Post Hospitalization",
+         "coverage_Lob":"Health"
+      },
+      {  
+         "coverageId":27,
+         "coverage_Name":"ICU Hospitalization",
+         "coverage_Lob":"Wealth"
+      },
+      {  
+         "coverageId":28,
+         "coverage_Name":"Inpatient Hospitalization",
+         "coverage_Lob":"Health"
+      },
+        {  
+         "coverageId":29,
+         "coverage_Name":"Post Treatment",
+         "coverage_Lob":"Health"
+      },
+      {  
+         "coverageId":40,
+         "coverage_Name":"Post Hospitalization",
+         "coverage_Lob":"Wealth"
+      }
+   ],
+   "totalNumberOfRecords":10
+}
+
