@@ -10,7 +10,12 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'autocomplete',
-    templateUrl: './app/autocomplete/autocomplete.component.html'
+    templateUrl: './app/autocomplete/autocomplete.component.html',
+    styles : [`
+        .collection-item {
+            background-color:#fff;
+        }
+    `]
 })
 
 

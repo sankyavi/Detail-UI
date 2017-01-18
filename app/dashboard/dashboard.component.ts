@@ -11,10 +11,21 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'app-dashboard',
 	templateUrl: './app/dashboard/dashboard.component.html',
-	styles : [`
+	styles: [`
 		.lefty {
 			text-align : left;
 			padding-left : 15px;
+		}
+		.leftyname {
+			text-align : left;
+			padding-left : 25px;
+		}
+		a:first-of-type {
+			padding-left: 15px;
+		}
+		a {
+			cursor: pointer;
+			cursor: hand;
 		}
 	`]
 })
@@ -40,10 +51,6 @@ export class DashboardComponent implements OnInit {
 			{
 				"name": "Plan Option Master",
 				"description": "Store the relevant plan option"
-			},
-			{
-				"name": "Plan Variant Master",
-				"description": "Store the relevant plan variant"
 			},
 			{
 				"name": "Plan Variant Master",

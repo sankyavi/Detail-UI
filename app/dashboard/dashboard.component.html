@@ -1,24 +1,31 @@
 <h3>Masters</h3>
-<p>Dashboard > Admin > Masters</p>
-
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <div class="col s12">
+        <a [routerLink]="['/home']" class="breadcrumb">Dashboard</a>
+        <a [routerLink]="['/home']" class="breadcrumb">Admin</a>
+        <a class="breadcrumb">Masters</a>
+      </div>
+    </div>
+  </nav>
+<p></p>
 <autocomplete></autocomplete>
 
 <table class="striped centered">
     <thead>
         <tr>
             <th>#</th>
-            <th class="lefty">Name</th>
+            <th class="leftyname">Name</th>
             <th class="lefty">Description</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let master of data.masterdata; let i = index;">
             <td>{{i+1}}</td>
-            <td class="lefty"><a>{{master.name}}</a></td>
+            <td class="lefty"><a (click)=goto(master.name)>{{master.name}}</a></td>
             <td class="lefty">{{master.description}}</td>
         </tr>
     </tbody>
 </table>
-<br>
 <hr>
 
