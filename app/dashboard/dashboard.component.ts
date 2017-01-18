@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 		}
 		.leftyname {
 			text-align : left;
-			padding-left : 25px;
+			padding-left : 30px;
 		}
 		a:first-of-type {
 			padding-left: 15px;
@@ -31,7 +31,8 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 	ngOnInit() {
-
+		// make the service call to get master data
+		this.saveDescription(); // call to save description of all masters in session storage object
 	}
 	constructor(private router: Router) { }
 
@@ -39,6 +40,15 @@ export class DashboardComponent implements OnInit {
 		var mastertable = table.split(' ').join('');
 		console.log("mastertable : " + mastertable);
 		this.router.navigate(['reference-details', mastertable]);
+	}
+
+	saveDescription() {
+		for (var i = 0, l = this.data.masterdata.length; i < l; i++) {
+    		var obj = this.data.masterdata[i];
+			var mastername = obj.name.split(' ').join('');
+			var masterdesc = obj.description;
+			sessionStorage.setItem(mastername, masterdesc);
+		}
 	}
 
 	data =

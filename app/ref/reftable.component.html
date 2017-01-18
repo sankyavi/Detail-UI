@@ -1,6 +1,30 @@
 <h3>{{master_name }}</h3>
-<p>Dashboard > Admin > Masters > Edit Masters</p>
-<p>No Of Records : {{noofrecords }}</p>
+
+<nav>
+  <div class="nav-wrapper teal lighten-2">
+    <div class="col s12">
+      <a [routerLink]="['/home']" class="breadcrumb">Dashboard</a>
+      <a [routerLink]="['/home']" class="breadcrumb">Admin</a>
+      <a [routerLink]="['/dashboard']" class="breadcrumb">Masters</a>
+      <a class="breadcrumb">Edit Masters</a>
+    </div>
+  </div>
+</nav>
+<p></p>
+
+<h5>Master Description :{{"  " + master_desc }}</h5>
+
+<p> </p>
+<form>
+  <fieldset class="card">
+    <legend class="card z-depth-1 grey lighten-2">Add Record Details</legend>
+    Coverage Name: <input type="text" placeholder="Effective date"><br>
+    <i class="material-icons prefix">today</i><input type="date" class="datepicker" placeholder="Effective date"><br>
+    <i class="material-icons prefix">today</i><input type="date" class="datepicker" placeholder="Expiry date">
+  </fieldset>
+</form>
+
+<!--<p>No Of Records : {{noofrecords }}</p>
 <ul class="pagination">
   <li *ngIf="!firstpage" (click)="pagination(0)" class="disabled"><i class="material-icons">chevron_left</i></li>
   <li (click)="pagination(1)" class="waves-effect">1</li>
@@ -9,7 +33,7 @@
   <li (click)="pagination(4)" class="waves-effect">4</li>
   <li (click)="pagination(5)" class="waves-effect">5</li>
   <li *ngIf="!lastpage" (click)="pagination(9999)" class="waves-effect"><i class="material-icons">chevron_right</i></li>
-</ul>
+</ul>-->
 
 <table class="bordered">
   <thead>
