@@ -14,7 +14,7 @@ import { RefService } from './ref.service';
  * @class PlaceholderComponent
  */
 
-@Component({ 
+@Component({
   templateUrl: './app/ref/reftable.component.html',
   styles: [`
 		a:first-of-type {
@@ -28,7 +28,16 @@ import { RefService } from './ref.service';
 			text-align : left;
 			padding-left : 15px;
 		}
-	`] 
+    .pad {
+			padding : 4px;
+		}
+    .bringdown {
+			padding-top : 5px;
+		}
+    .iconshift {
+			margin-right: 10px;
+		}
+	`]
 })
 
 export class RefTableComponent {
@@ -48,10 +57,18 @@ export class RefTableComponent {
   constructor(private route: ActivatedRoute, private http: Http, private _refService: RefService) { }
 
   private ngOnInit() {
-     $('.datepicker').pickadate({
+
+    $(document).ready(function () {
+      $('select').material_select();
+      $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 10 // Creates a dropdown of 15 years to control year
       });
+       $('.datepicker1').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10 // Creates a dropdown of 15 years to control year
+      });
+    });
     this.route.params
       .map(params => params['id'])
       .switchMap(id => this._refService.getData(id))

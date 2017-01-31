@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 /**
- * @description The autocomplete functionilty for masters search box
+ * @description The autocomplete functionalilty for masters search box
  * @author Avinash 
  * @export AutocompleteComponent
  * @class AutocompleteComponent
+ * @record Avinash 1/20/2017 updated functinality 1
+ * @record Avinash 1/30/2017 removed functinality 2
  */
 
 @Component({
@@ -15,6 +17,10 @@ import { Router } from '@angular/router';
         .collection-item {
             background-color:#fff;
         }
+        a {
+			cursor: pointer;
+			cursor: hand;
+		}
     `]
 })
 

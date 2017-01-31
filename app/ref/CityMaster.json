@@ -1,0 +1,49 @@
+{
+    "name": "City Master",
+    "link": {
+        "linkType": "Zone",
+        "values": [
+            {
+                "linkId": 6,
+                "linkName": "West"
+            },
+            {
+                "linkId": 12,
+                "linkName": "East"
+            },
+            {
+                "linkId": 13,
+                "linkName": "North"
+            },
+            {
+                "linkId": 5,
+                "linkName": "South"
+            }
+        ]
+    },
+    "references": [
+        {
+            "rowid": 7,
+            "code": "CHN",
+            "value": "Chennai",
+            "type": "City",
+            "category": "CARE",
+            "linkid": 5,
+            "effectiveStartDate": "11/01/2017",
+            "effectiveEndDate": "11/01/2019",
+            "status": "Inactive"
+        },
+        {
+            "rowid": 8,
+            "code": "MUM",
+            "value": "Mumbai",
+            "type": "City",
+            "category": "CARE",
+            "linkid": 6,
+            "effectiveStartDate": "12/01/2017",
+            "effectiveEndDate": "12/01/2019",
+            "status": "Active"
+        }
+    ],
+    "noofreferences": 2
+}

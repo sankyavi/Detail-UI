@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
 
+/**
+ * @author Avinash 
+ * @description Root Component
+ * @export AppComponent
+ * @class AppComponent
+ */
 
 @Component({
     selector: 'my-app',
