@@ -5,12 +5,12 @@ import { HttpModule } from '@angular/http';
 import { FormsModule}  from '@angular/forms';
 // user defined component imports
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RefTableComponent }  from './ref/reftable.component';
-import { AutocompleteComponent } from './autocomplete/autocomplete.component';
-import { DummyComponent } from './dummy/dummy.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RefTableComponent }  from './components/ref/reftable.component';
+import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
+import { DummyComponent } from './components/dummy/dummy.component';
 // user defined misc imports
-import { RefService } from './ref/ref.service';
+import { RefService } from './services/ref.service';
 import { appRouting } from './app.routing';
 
 

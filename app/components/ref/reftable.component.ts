@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/retry';
 
-import { RefService } from './ref.service';
+import { RefService } from './app/services/ref.service';
 
 /**
  * @author Avinash 
@@ -37,6 +37,9 @@ import { RefService } from './ref.service';
     .iconshift {
 			margin-right: 10px;
 		}
+    .grey {
+      
+    }
 	`]
 })
 
@@ -54,7 +57,7 @@ export class RefTableComponent {
   private firstpage: boolean = true;
   private lastpage: boolean = false;
 
-  constructor(private route: ActivatedRoute, private http: Http, private _refService: RefService) { }
+  constructor(private _routeParams: ActivatedRoute, private http: Http, private _refService: RefService) { }
 
   private ngOnInit() {
 
@@ -69,7 +72,7 @@ export class RefTableComponent {
         selectYears: 10 // Creates a dropdown of 15 years to control year
       });
     });
-    this.route.params
+    this._routeParams.params
       .map(params => params['id'])
       .switchMap(id => this._refService.getData(id))
       .retry(2)

@@ -56,18 +56,22 @@
         </label>
         </div>
       </div>
-      <div class="input-field col s6 m6 offset-s6 offset-m6">
+      <!--<div class="input-field col s6 m6 offset-s6 offset-m6">
         <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">South</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">South</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
         <label>Select Zone</label>
+      </div>-->
+      <div class="col s4 m4 offset-s8 offset-m8">
+        <a class="waves-effect waves-light btn" [routerLink]="['/dashboard']"><i class="material-icons left">clear</i>Cancel</a>
+        <a class="waves-effect waves-light btn"><i class="material-icons left">done_all</i>Add Record</a>
       </div>
-       <div class="col s6 m6 offset-s6 offset-m6">
-      <a class="waves-effect waves-light btn"><i class="material-icons left">done</i>Add Record</a>
-       </div>
+      <!--<div class="col s3 m3">
+        <a class="waves-effect waves-light btn"><i class="material-icons left">done_all</i>Add Record</a>
+      </div>-->
     </div>
   </fieldset>
 </form>
@@ -85,7 +89,7 @@
 
 <table class="bordered">
   <thead>
-    <tr>
+    <tr class="grey">
       <th *ngFor="let col of schema">{{col.name}}</th>
       <th>Click on edit & to see id</th>
     </tr>

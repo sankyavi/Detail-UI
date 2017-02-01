@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import { RefTableComponent } from './ref/reftable.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DummyComponent } from './dummy/dummy.component';
+import { RefTableComponent } from './components/ref/reftable.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DummyComponent } from './components/dummy/dummy.component';
 
 
 
