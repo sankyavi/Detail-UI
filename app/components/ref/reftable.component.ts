@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/retry';
 
-import { RefService } from './app/services/ref.service';
+import { RefService } from '/app/services/ref.service';
+import { LocalStorageService } from '/app/services/localstorage.service';
 
 /**
  * @author Avinash 
@@ -15,7 +15,7 @@ import { RefService } from './app/services/ref.service';
  */
 
 @Component({
-  templateUrl: './app/ref/reftable.component.html',
+  templateUrl: './app/components/ref/reftable.component.html',
   styles: [`
 		a:first-of-type {
 			padding-left: 15px;
@@ -57,7 +57,8 @@ export class RefTableComponent {
   private firstpage: boolean = true;
   private lastpage: boolean = false;
 
-  constructor(private _routeParams: ActivatedRoute, private http: Http, private _refService: RefService) { }
+  constructor(private _routeParams: ActivatedRoute, private _refService: RefService,
+    private _localStorageService: LocalStorageService) { }
 
   private ngOnInit() {
 
@@ -67,11 +68,12 @@ export class RefTableComponent {
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 10 // Creates a dropdown of 15 years to control year
       });
-       $('.datepicker1').pickadate({
+      $('.datepicker1').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 10 // Creates a dropdown of 15 years to control year
       });
     });
+
     this._routeParams.params
       .map(params => params['id'])
       .switchMap(id => this._refService.getData(id))
@@ -79,13 +81,13 @@ export class RefTableComponent {
       .subscribe(
       data => {
         this.master_name = data.name;
-        this.getName();
+        this.getDesc()
         this.schema = data.schema;
         this.references = data.references;
         this.noofrecords = data.totalNumberOfRecords;
       },
       err => { console.log('err occured' + err) },
-      () => console.log('done')
+      () => {console.log('done')}
       )
   }
 
@@ -94,13 +96,12 @@ export class RefTableComponent {
   //   this.sub.unsubscribe();
   // }
 
-  getName() {
-    this.master_desc = sessionStorage.getItem(this.master_name.split(' ').join(''));
+  getDesc() {
+    this.master_desc = this._localStorageService.get(this.master_name);
   }
 
   generateArray(obj) {
     return Object.keys(obj).map((key) => {
-      //console.log(key + ' -> ' + obj[key]); 
       return obj[key];
     });
   }

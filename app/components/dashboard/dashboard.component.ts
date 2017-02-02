@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { RefService } from '/app/services/ref.service';
+import { LocalStorageService } from '/app/services/localstorage.service';
+
 /**
  * @description The Dashboard component shows the master list
  * @author Avinash 
@@ -10,7 +13,7 @@ import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-dashboard',
-	templateUrl: './app/dashboard/dashboard.component.html',
+	templateUrl: './app/components/dashboard/dashboard.component.html',
 	styles: [`
 		.lefty {
 			text-align : left;
@@ -30,59 +33,34 @@ import { Router } from '@angular/router';
 	`]
 })
 export class DashboardComponent implements OnInit {
+
+	masterdata: { name: string, description: string }[] = [];
+
+	constructor(private router: Router, private _localStorageService: LocalStorageService,
+		private _refService: RefService) { }
+
 	ngOnInit() {
 		// make the service call to get master data
-		this.saveDescription(); // call to save description of all masters in session storage object
+		this._refService.getData("masterdata")
+			.subscribe(
+			data => this.masterdata = data.masterdata,
+			err => { console.log('err occured' + err) },
+			() => this.saveDescription() // call to save description of all masters in session storage object
+			)
 	}
-	constructor(private router: Router) { }
 
-	goto(table) {
+	goto(table: string) {
 		var mastertable = table.split(' ').join('');
-		console.log("mastertable : " + mastertable);
+		console.log("dashboard :: mastertable : " + mastertable);
 		this.router.navigate(['reference-details', mastertable]);
 	}
 
 	saveDescription() {
-		for (var i = 0, l = this.data.masterdata.length; i < l; i++) {
-    		var obj = this.data.masterdata[i];
-			var mastername = obj.name.split(' ').join('');
+		for (var i = 0, l = this.masterdata.length; i < l; i++) {
+			var obj = this.masterdata[i];
+			var mastername = obj.name;
 			var masterdesc = obj.description;
-			sessionStorage.setItem(mastername, masterdesc);
+			this._localStorageService.set(mastername, masterdesc);
 		}
 	}
-
-	data =
-	{
-		"masterdata": [
-			{
-				"name": "LOB Master",
-				"description": "Lob Master"
-			},
-			{
-				"name": "Plan Option Master",
-				"description": "Store the relevant plan option"
-			},
-			{
-				"name": "Plan Variant Master",
-				"description": "Store the relevant plan variant"
-			},
-			{
-				"name": "Coverage Master",
-				"description": "Store the Coverages"
-			},
-			{
-				"name": "Services Master",
-				"description": "Store the services"
-			},
-			{
-				"name": "Exclusions Master",
-				"description": "Store the Exclusions"
-			},
-			{
-				"name": "ICD Master",
-				"description": "Store the ICD codes"
-			}
-		]
-	}
-
 }

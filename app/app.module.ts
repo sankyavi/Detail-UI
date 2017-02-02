@@ -11,6 +11,7 @@ import { AutocompleteComponent } from './components/autocomplete/autocomplete.co
 import { DummyComponent } from './components/dummy/dummy.component';
 // user defined misc imports
 import { RefService } from './services/ref.service';
+import { LocalStorageService } from './services/localstorage.service';
 import { appRouting } from './app.routing';
 
 
@@ -38,7 +39,8 @@ import { appRouting } from './app.routing';
     appRouting
   ],
   providers: [
-    RefService
+    RefService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })

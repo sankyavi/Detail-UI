@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 /**
@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'autocomplete',
-    templateUrl: './app/autocomplete/autocomplete.component.html',
-    styles : [`
+    templateUrl: './app/components/autocomplete/autocomplete.component.html',
+    styles: [`
         .collection-item {
             background-color:#fff;
         }
@@ -25,17 +25,21 @@ import { Router } from '@angular/router';
 })
 
 
-export class AutocompleteComponent {
-    public query: String = '';
-    public masters : String[] = [ "Lob Master","Plan Option Master","Plan Variant Master","Master","Coverage Master","Services Master","Standard Exclusions Master","ICD Master"];
-    //public masters: String[] = ["Coverage Master", "Dino Master", "KungFu Master"];
-    public filteredList: String[] = [];
+export class AutocompleteComponent implements OnInit {
+    query: string = '';
+    masters1 : string[] = [];
+    //masters : string[] = [ "Lob Master","Plan Option Master","Plan Variant Master","Master","Coverage Master","Services Master","Standard Exclusions Master","ICD Master"];
+    filteredList: string[] = [];
 
     constructor(private router: Router) { }
 
+    ngOnInit() {
+        this.masters1 = Object.keys(localStorage);
+    }
+
     filter() {
         if (this.query !== "") {
-            this.filteredList = this.masters.filter(function (el: String) {
+            this.filteredList = this.masters1.filter(function (el: string) {
                 //return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
                 // use above if polyfill required for below
                 return el.toLowerCase().includes(this.query.toLowerCase());
@@ -46,13 +50,14 @@ export class AutocompleteComponent {
     }
 
 
-    select(item: String) {
+    select(item: string) {
         this.query = item;
         this.filteredList = [];
     }
+
     onClick() {
         var mastertable = this.query.split(' ').join('');
-        console.log("mastertable : " + mastertable);
+        console.log("autocomplete  :: mastertable : " + mastertable);
         this.router.navigate(['reference-details', mastertable]);
     }
 }

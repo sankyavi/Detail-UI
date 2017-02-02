@@ -1,82 +1,36 @@
-[
-    {
-        "name": "LOB Master",
-        "description": "Lob Master",
-        "createdOn": "15/09/2012",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2012",
-        "lastModifiedBy": "234567",
-        "status": "Active"
-    },
-    {
-        "name": "Plan Option Master",
-        "description": "Store the relevant plan option",
-        "createdOn": "15/09/2012",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2012",
-        "lastModifiedBy": "234567",
-        "status": "Active"
-    },
-    {
-        "name": "Plan Variant Master",
-        "description": "Store the relevant plan variant",
-        "createdOn": "15/09/2015",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2016",
-        "lastModifiedBy": "234567",
-        "status": "Expired"
-    },
-    {
-        "name": "Plan Variant Master",
-        "description": "Store the relevant plan variant",
-        "createdOn": "15/09/2016",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2016",
-        "lastModifiedBy": "234567",
-        "status": "Expired"
-    },
-    {
-        "name": "Coverage Master",
-        "description": "Store the Coverages",
-        "createdOn": "15/09/2012",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2012",
-        "lastModifiedBy": "234567",
-        "status": "Expired"
-    },
-    {
-        "name": "Services Master",
-        "description": "Store the services",
-        "createdOn": "15/09/2012",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2012",
-        "lastModifiedBy": "234567",
-        "status": "Expired"
-    },
-    {
-        "name": "Exclusions Master",
-        "description": "Store the Exclusions",
-        "createdOn": "15/09/2018",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2018",
-        "lastModifiedBy": "234567",
-        "status": "Active"
-    },
-    {
-        "name": "ICD Master",
-        "description": "Store the ICD codes",
-        "createdOn": "15/09/2012",
-        "createdBy": "459788",
-        "expiryDate": "NA",
-        "lastModifiedDate": "15/20/2012",
-        "lastModifiedBy": "234567",
-        "status": "Expired"
-    }
-]
+{
+    "masterdata": [
+        {
+            "name": "LOB Master",
+            "description": "List of LOB's"
+        },
+        {
+            "name": "Plan Option Master",
+            "description": "Store the relevant plan option"
+        },
+        {
+            "name": "Plan Variant Master",
+            "description": "Store the relevant plan variant"
+        },
+        {
+            "name": "Coverage Master",
+            "description": "Store the Coverages"
+        },
+        {
+            "name": "Services Master",
+            "description": "Store the Services"
+        },
+        {
+            "name": "Exclusions Master",
+            "description": "Store the Exclusions"
+        },
+        {
+            "name": "ICD Master",
+            "description": "Store the ICD codes"
+        },
+        {
+            "name": "City Master",
+            "description": "Store the Cities"
+        }
+    ]
+}

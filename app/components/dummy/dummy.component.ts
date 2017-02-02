@@ -8,7 +8,7 @@ import { Component} from '@angular/core';
  */
 @Component({
 	selector: 'app-dummy',
-	templateUrl: './app/dummy/dummy.component.html'
+	templateUrl: './app/components/dummy/dummy.component.html'
 })
 export class DummyComponent {
 }

@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let master of data.masterdata; let i = index;">
+        <tr *ngFor="let master of masterdata; let i = index;">
             <td>{{i+1}}</td>
             <td class="lefty"><a (click)=goto(master.name)>{{master.name}}</a></td>
             <td class="lefty">{{master.description}}</td>
