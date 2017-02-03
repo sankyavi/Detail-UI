@@ -31,6 +31,10 @@
         {
             "name": "City Master",
             "description": "Store the Cities"
+        },
+        {
+            "name": "Zone Master",
+            "description": "Store the Zones"
         }
     ]
 }

@@ -7,13 +7,13 @@ import 'rxjs/add/operator/retry';
 import { RefService } from '/app/services/ref.service';
 import { LocalStorageService } from '/app/services/localstorage.service';
 
-/**
- * @author Avinash 
- * @description calls placeholder service to fetch data 
- * @export PlaceholderComponent
- * @class PlaceholderComponent
- */
 
+/**
+ * 
+ * @author 
+ * @export 
+ * @class RefTableComponent
+ */
 @Component({
   templateUrl: './app/components/ref/reftable.component.html',
   styles: [`
@@ -37,20 +37,25 @@ import { LocalStorageService } from '/app/services/localstorage.service';
     .iconshift {
 			margin-right: 10px;
 		}
-    .grey {
-      
+    .nostyle {
+    text-decoration: none;
+    color: inherit;
     }
 	`]
 })
 
 export class RefTableComponent {
 
-  private sub: any;
   private id: any;
   private master_name: string;
   private master_desc: string;
-  private schema: string[];
-  private schemaval: string[];
+
+  private master_type: string;
+  private link: any = {};
+  private linktype: string;
+  private linkflag: boolean;
+  private linkvalues: string[];
+
   private references: string[];
   private noofrecords: number;
 
@@ -81,24 +86,58 @@ export class RefTableComponent {
       .subscribe(
       data => {
         this.master_name = data.name;
+        this.link = data.link;
         this.getDesc()
-        this.schema = data.schema;
         this.references = data.references;
-        this.noofrecords = data.totalNumberOfRecords;
+        this.noofrecords = data.totalreferences;
       },
       err => { console.log('err occured' + err) },
-      () => {console.log('done')}
+      () => { console.log('done') }
       )
   }
 
-  //not needed to unsubscribe because it will be auto garbage collected inc the observable on destroying component 
+  // **IMP **no need to unsubscribe because it will be auto garbage collected 
+  // including the observable on destroying component 
   // private ngOnDestroy() {
   //   this.sub.unsubscribe();
   // }
 
+
+  
+
+
   getDesc() {
+    let arraytemp: string[] = this.master_name.split(' ');
+    this.master_type = arraytemp[0];
+
+
     this.master_desc = this._localStorageService.get(this.master_name);
+
+
+
+
+    console.log(this.link);
+    if (this.link === undefined){
+      console.log("this.link === undefined");
+      this.linkflag = false;
+    }else {
+      console.log("this.linkflag = true");
+      this.linkflag = true;
+      this.linktype = this.link.linkType;
+      this.linkvalues = this.link.values;
+      console.log(this.linktype + this.linkflag);
+      console.log(this.linkvalues);
+    }
+  
+
   }
+
+  showid(num: number) {
+    var keys: string[] = this.generateKeys(this.references[num]);
+    var values: string[] = this.generateArray(this.references[num]);
+    alert("This will open edit Modal for " + keys[0] + ":" + values[0]);
+  }
+
 
   generateArray(obj) {
     return Object.keys(obj).map((key) => {
@@ -108,11 +147,5 @@ export class RefTableComponent {
 
   generateKeys(obj) {
     return Object.keys(obj).map((key) => { return key });
-  }
-
-  showid(num: number) {
-    var keys: string[] = this.generateKeys(this.references[num]);
-    var values: string[] = this.generateArray(this.references[num]);
-    alert("This will open edit Modal for " + keys[0] + ":" + values[0]);
   }
 }

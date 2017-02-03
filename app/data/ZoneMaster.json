@@ -1,0 +1,38 @@
+{
+    "name": "Zone Master",
+    "references": [
+        {
+            "id": 3,
+            "code": "W",
+            "value": "West",
+            "effectiveStartDate": "2017-10-31T18:30:00.000Z",
+            "effectiveEndDate": "2019-10-31T18:30:00.000Z",
+            "status": "active"
+        },
+        {
+            "id": 4,
+            "code": "E",
+            "value": "East",
+            "effectiveStartDate": "2017-11-30T18:30:00.000Z",
+            "effectiveEndDate": "2019-11-30T18:30:00.000Z",
+            "status": "Inactive"
+        },
+        {
+            "id": 5,
+            "code": "N",
+            "value": "North",
+            "effectiveStartDate": "2017-11-30T18:30:00.000Z",
+            "effectiveEndDate": "2019-11-30T18:30:00.000Z",
+            "status": "active"
+        },
+        {
+            "id": 6,
+            "code": "S",
+            "value": "South",
+            "effectiveStartDate": "2017-11-30T18:30:00.000Z",
+            "effectiveEndDate": "2019-11-30T18:30:00.000Z",
+            "status": "active"
+        }
+    ],
+    "totalreferences": 4
+}

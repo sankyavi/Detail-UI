@@ -60,6 +60,8 @@ export class DashboardComponent implements OnInit {
 			var obj = this.masterdata[i];
 			var mastername = obj.name;
 			var masterdesc = obj.description;
+
+			
 			this._localStorageService.set(mastername, masterdesc);
 		}
 	}

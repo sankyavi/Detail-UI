@@ -1,0 +1,30 @@
+{
+    "name": "LOB Master",
+    "references": [
+        {
+            "id": 1,
+            "code": "HLTH",
+            "value": "Health",
+            "effectiveStartDate": "2017-10-31T18:30:00.000Z",
+            "effectiveEndDate": "2019-10-31T18:30:00.000Z",
+            "status": "active"
+        },
+        {
+            "id": 2,
+            "code": "TRA",
+            "value": "Travel",
+            "effectiveStartDate": "2017-11-30T18:30:00.000Z",
+            "effectiveEndDate": "2019-11-30T18:30:00.000Z",
+            "status": "active"
+        },
+        {
+            "id": 3,
+            "code": "PA",
+            "value": "Personal Accident",
+            "effectiveStartDate": "2017-11-30T18:30:00.000Z",
+            "effectiveEndDate": "2019-11-30T18:30:00.000Z",
+            "status": "active"
+        }
+    ],
+    "totalreferences": 27
+}

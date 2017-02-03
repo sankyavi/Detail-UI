@@ -56,22 +56,19 @@
         </label>
         </div>
       </div>
-      <!--<div class="input-field col s6 m6 offset-s6 offset-m6">
+      <div class="input-field col s6 m6 offset-s6 offset-m6" *ngIf="linkflag">
         <select>
           <option value="" disabled selected>Choose your option</option>
           <option value="1">South</option>
           <option value="2">Option 2</option>
           <option value="3">Option 3</option>
         </select>
-        <label>Select Zone</label>
-      </div>-->
+        <label>{{linktype}}}</label>
+      </div>
       <div class="col s4 m4 offset-s8 offset-m8">
         <a class="waves-effect waves-light btn" [routerLink]="['/dashboard']"><i class="material-icons left">clear</i>Cancel</a>
         <a class="waves-effect waves-light btn"><i class="material-icons left">done_all</i>Add Record</a>
       </div>
-      <!--<div class="col s3 m3">
-        <a class="waves-effect waves-light btn"><i class="material-icons left">done_all</i>Add Record</a>
-      </div>-->
     </div>
   </fieldset>
 </form>
@@ -87,17 +84,25 @@
   <li *ngIf="!lastpage" (click)="pagination(9999)" class="waves-effect"><i class="material-icons">chevron_right</i></li>
 </ul>-->
 
-<table class="bordered">
+<table class="bordered centered striped">
   <thead>
     <tr class="grey">
-      <th *ngFor="let col of schema">{{col.name}}</th>
-      <th>Click on edit & to see id</th>
+      <th>{{master_type + 'Code'}}</th>
+      <th>{{master_type + 'Name'}}</th>
+      <th>Effective Date</th>
+      <th>Expiry Date</th>
+      <th>Status</th>
+      <th>Edit</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let yol of references; let i = index;">
-      <td *ngFor="let col of generateArray(yol)">{{col}}</td>
+    <tr *ngFor="let col of references; let i = index;">
+      <td>{{col.code}}</td>
+      <td>{{col.value}}</td>
+      <td>{{col.effectiveStartDate}}</td>
+      <td>{{col.effectiveEndDate}}</td>
+      <td>{{col.status}}</td>
       <td (click)="showid(i)"><a>Edit</a></td>
     </tr>
   </tbody>

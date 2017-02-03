@@ -4,46 +4,40 @@
         "linkType": "Zone",
         "values": [
             {
-                "linkId": 6,
+                "linkId": 3,
                 "linkName": "West"
             },
             {
-                "linkId": 12,
+                "linkId": 4,
                 "linkName": "East"
             },
             {
-                "linkId": 13,
+                "linkId": 5,
                 "linkName": "North"
             },
             {
-                "linkId": 5,
+                "linkId": 6,
                 "linkName": "South"
             }
         ]
     },
     "references": [
         {
-            "rowid": 7,
-            "code": "CHN",
+            "id": 7,
+            "code": "1",
             "value": "Chennai",
-            "type": "City",
-            "category": "CARE",
-            "linkid": 5,
-            "effectiveStartDate": "11/01/2017",
-            "effectiveEndDate": "11/01/2019",
-            "status": "Inactive"
+            "effectiveStartDate": "2017-10-31T18:30:00.000Z",
+            "effectiveEndDate": "2019-10-31T18:30:00.000Z",
+            "status": "active"
         },
         {
-            "rowid": 8,
-            "code": "MUM",
+            "id": 8,
+            "code": "2",
             "value": "Mumbai",
-            "type": "City",
-            "category": "CARE",
-            "linkid": 6,
-            "effectiveStartDate": "12/01/2017",
-            "effectiveEndDate": "12/01/2019",
-            "status": "Active"
+            "effectiveStartDate": "2017-11-30T18:30:00.000Z",
+            "effectiveEndDate": "2019-11-30T18:30:00.000Z",
+            "status": "inactive"
         }
     ],
-    "noofreferences": 2
+    "totalreferences": 27
 }

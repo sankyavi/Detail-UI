@@ -17,7 +17,7 @@ import { appRouting } from './app.routing';
 
 /**
  * @description Feature module 1 has funtionaily for reference data mgmt
- * @author Avinash 
+ * @author Avinash , vino , arun ,
  * @export FeatureModule1
  * @class FeatureModule1
  * @record Avinash 1/20/2017 updated functinality 1
