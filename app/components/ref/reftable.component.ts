@@ -103,7 +103,7 @@ export class RefTableComponent {
   // }
 
 
-  
+
 
 
   getDesc() {
@@ -113,22 +113,14 @@ export class RefTableComponent {
 
     this.master_desc = this._localStorageService.get(this.master_name);
 
-
-
-
-    console.log(this.link);
-    if (this.link === undefined){
-      console.log("this.link === undefined");
+    if (this.link === undefined) {
       this.linkflag = false;
-    }else {
-      console.log("this.linkflag = true");
+    } else {
       this.linkflag = true;
       this.linktype = this.link.linkType;
       this.linkvalues = this.link.values;
-      console.log(this.linktype + this.linkflag);
-      console.log(this.linkvalues);
     }
-  
+
 
   }
 
