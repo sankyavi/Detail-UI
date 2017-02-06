@@ -1,14 +1,13 @@
 import { Component} from '@angular/core';
 
 /**
- * @description The Dashboard containing the list of masters
+ * @description The shell for all pages
  * @author Avinash 
  * @export DashboardComponent
  * @class DashboardComponent
  */
 @Component({
-	selector: 'app-dummy',
-	templateUrl: './app/components/dummy/dummy.component.html'
+	template: '<h1>Welcome</h1>'
 })
 export class DummyComponent {
 }
