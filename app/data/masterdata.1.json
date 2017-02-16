@@ -1,0 +1,49 @@
+{
+    "masterdata": [
+        {
+            "id":1,
+            "name": "LOB Master",
+            "description": "List of LOB's"
+        },
+        {
+            "id":2,
+            "name": "Plan Option Master",
+            "description": "Store the relevant plan option"
+        },
+        {
+            "id":3,
+            "name": "Plan Variant Master",
+            "description": "Store the relevant plan variant"
+        },
+        {
+            "id":4,
+            "name": "Coverage Master",
+            "description": "Store the Coverages"
+        },
+        {
+            "id":5,
+            "name": "Services Master",
+            "description": "Store the Services"
+        },
+        {
+            "id":6,
+            "name": "Exclusions Master",
+            "description": "Store the Exclusions"
+        },
+        {
+            "id":7,
+            "name": "ICD Master",
+            "description": "Store the ICD codes"
+        },
+        {
+            "id":8,
+            "name": "City Master",
+            "description": "Store the Cities"
+        },
+        {
+            "id":9,
+            "name": "Zone Master",
+            "description": "Store the Zones"
+        }
+    ]
+}
